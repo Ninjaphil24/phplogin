@@ -1,4 +1,6 @@
 {
+    "name": "linter_test",
+    "description": "Linter Test before project start",
     "require-dev": {
         "overtrue/phplint": "^5.3",
         "squizlabs/php_codesniffer": "*"
