@@ -1,6 +1,7 @@
 {
     "name": "linter/test",
     "description": "Linter Test before project start",
+    "license": "proprietary",
     "require-dev": {
         "overtrue/phplint": "^5.3",
         "squizlabs/php_codesniffer": "*"
