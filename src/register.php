@@ -53,7 +53,9 @@ if (isset($_POST['submit'])) {
                     $mail->isHTML(true);
                 //Set email format to HTML
                     $mail->Subject = 'Please do not reply to this email!';
-                    $mail->Body = 'Please click on the following link to verify your registration <b><a href="http://localhost/phplogincest/?verification=' . $code . '">http://localhost/phplogincest/?verification=' . $code . '</a></b>';
+                    $mail->Body = 'Please click on the following link to verify your registration 
+                    <b><a href="http://localhost/phplogincest/?verification=' . $code . '">
+                    http://localhost/phplogincest/?verification=' . $code . '</a></b>';
                     $mail->send();
                     echo 'Message has been sent';
                 } catch (Exception $e) {
@@ -81,7 +83,9 @@ if (isset($_POST['submit'])) {
     <title>Registrierung</title>
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous">
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
