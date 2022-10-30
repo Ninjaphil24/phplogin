@@ -7,8 +7,8 @@
         "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
-        "lint":"phplint --no-cache",
-        "phpcs": "phpcs --standard=PSR12 ",
-        "phpcbf": "phpcbf --standard=PSR12"
+        "lint":"phplint --no-cache ./",
+        "phpcs": "phpcs --standard=PSR12 ./ ",
+        "phpcbf": "phpcbf --standard=PSR12 ./"
     }
 }
