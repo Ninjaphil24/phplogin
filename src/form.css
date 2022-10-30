@@ -56,14 +56,16 @@ body
     transition: .5s;
 }
 .box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label
+.box .inputBox input:valid ~ label,
+a
 {
     top: -18px;
     left: 0;
     color: #03a9f4;
     font-size: 12px;
 }
-.box input[type="submit"]
+.box input[type="submit"],
+a
 {
     background: transparent;
     border: none;
@@ -73,4 +75,14 @@ body
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+}
+a
+{
+    padding: 11px 20px;
+    text-decoration: none;
+}
+.buttons
+{
+    display: flex;
+    justify-content: space-between;
 }
