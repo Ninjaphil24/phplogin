@@ -1,14 +1,14 @@
 {
-    "name": "linter/test",
-    "description": "Linter Test before project start",
+    "name": "simple/register_login",
+    "description": "Registrierung und Login System",
     "license": "proprietary",
     "require-dev": {
         "overtrue/phplint": "^5.3",
         "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
-        "lint":"phplint --no-cache src/",
-        "phpcs": "phpcs --standard=PSR12 src/",
-        "phpcbf": "phpcbf --standard=PSR12 src/"
+        "lint":"phplint --no-cache",
+        "phpcs": "phpcs --standard=PSR12 ",
+        "phpcbf": "phpcbf --standard=PSR12"
     }
 }
