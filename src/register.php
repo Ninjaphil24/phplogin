@@ -20,7 +20,8 @@ if (isset($_POST['submit'])) {
         $msg = "<div class = 'alert alert-danger'>{$email} - This email is already in use!</div>";
     } else {
         if ($password === $confirm_password) {
-            $sql = "INSERT INTO users (username, email,password,code) VALUES ('{$username}','{$email}', '{$password}','{$code}')";
+            $sql = "INSERT INTO users (username, email,password,code) 
+            VALUES ('{$username}','{$email}', '{$password}','{$code}')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 echo "<div style='display:none;'>";
