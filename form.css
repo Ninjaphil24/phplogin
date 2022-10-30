@@ -3,7 +3,6 @@ body
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    /* background: url(discount2.jpg); */
     background-size: cover;
     background-color: rgb(2, 62, 62);
 }
@@ -37,7 +36,7 @@ body
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
-    letter-spacing: 1px;    
+    letter-spacing: 1px;
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
