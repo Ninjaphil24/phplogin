@@ -1,11 +1,12 @@
 <?php
-    include 'config.php';
+include 'config.php';
 ?>
 
 <title>Registrierung</title>
 </head>
+
 <body>
-<div class="box">
+    <div class="box">
         <h2>Registrierung</h2> <br>
         <?php echo $msg; ?>
         <form action="" method="post">
@@ -28,17 +29,18 @@
                 <input type="password" name="confirm-password" required>
                 <label>Passwort bestätigen</label>
             </div>
+            <h4>Haben Sie schon Konto?</h4>
             <div class="buttons">
-
-          <button type="submit" name="submit" value="Submit">Registrieren</button>
-          <a href="index.php">Login</a>
-          </div>
+                <button type="submit" name="submit" value="Submit">Registrieren</button>
+                <a href="index.php">Login</a>
+            </div>
 
         </form>
 
-</div>
+    </div>
 
 
 
 </body>
+
 </html>

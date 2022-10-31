@@ -2,7 +2,12 @@
 
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "", "login");
+// Localhost settings
+// $conn = mysqli_connect("localhost", "root", "", "login");
+
+// Live host settings (Live host db is on heroku and on a free tier.  It can be temperamental.)
+$conn = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baaaf2adc6f7c6", "15b21c52", "heroku_230984791d3e78e", 3306);
+
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -33,32 +38,32 @@ if (isset($_POST['submit'])) {
                 //Create an instance; passing `true` enables exceptions
                 $mail = new PHPMailer(true);
                 try {
-                //Server settings
+                    //Server settings
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-                //Enable verbose debug output
+                    //Enable verbose debug output
                     $mail->isSMTP();
-                //Send using SMTP
+                    //Send using SMTP
                     $mail->Host = 'smtp.gmail.com';
-                //Set the SMTP server to send through
+                    //Set the SMTP server to send through
                     $mail->SMTPAuth = true;
-                //Enable SMTP authentication
+                    //Enable SMTP authentication
                     $mail->Username = 'automod24@gmail.com';
-                //SMTP username
-                    $mail->Password = 'phzneerhhwtwjfml';
-                //SMTP password
+                    //SMTP username
+                    $mail->Password = 'alhypwggpmjaxyyb';
+                    //SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                //Enable implicit TLS encryption
+                    //Enable implicit TLS encryption
                     $mail->Port = 465;
-                //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
                     $mail->setFrom('automod24@gmail.com', 'Phil Mod');
                     $mail->addAddress($email);
-                //Content
+                    //Content
                     $mail->isHTML(true);
-                //Set email format to HTML
+                    //Set email format to HTML
                     $mail->Subject = 'Bitte antworten Sie nicht auf diese Email!';
-                    $mail->Body = 'Bitte klicken Sie auf den folgenden Link, um Ihre Registrierung zu bestätigen 
+                    $mail->Body = 'Bitte klicken Sie auf den folgenden Link, um Ihre Registrierung zu bestaetigen 
                     <b><a href="http://localhost/phplogin/src/?verification=' . $code . '">
                     http://localhost/phplogin/src/?verification=' . $code . '</a></b>';
                     $mail->send();
@@ -117,13 +122,12 @@ if (isset($_POST['login'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
-    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="form.css">

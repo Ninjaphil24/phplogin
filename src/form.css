@@ -1,13 +1,12 @@
-body
-{
+body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     background-size: cover;
     background-color: rgb(2, 62, 62);
 }
-.box
-{
+
+.box {
     position: relative;
     top: 300px;
     left: 50%;
@@ -19,19 +18,27 @@ body
     box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
-.box h2
-{
+
+.box h2 {
     margin: 0;
     padding: 0;
     color: #fff;
     text-align: center;
 }
-.box .inputBox
-{
+
+.box h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    text-align: right;
+    color: #fff;
+}
+
+.box .inputBox {
     position: relative;
 }
-.box .inputBox input
-{
+
+.box .inputBox input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -43,8 +50,8 @@ body
     outline: none;
     background: transparent;
 }
-.box .inputBox label
-{
+
+.box .inputBox label {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,17 +62,17 @@ body
     pointer-events: none;
     transition: .5s;
 }
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label
-{
+
+.box .inputBox input:focus~label,
+.box .inputBox input:valid~label {
     top: -18px;
     left: 0;
     color: #03a9f4;
     font-size: 12px;
 }
+
 .box button,
-.box a
-{
+.box a {
     background: transparent;
     border: none;
     outline: none;
@@ -75,12 +82,18 @@ body
     cursor: pointer;
     border-radius: 5px;
 }
-.box a
-{
+
+.box a {
     text-decoration: none;
 }
-.buttons
-{
+
+.box button:hover,
+.box a:hover {
+    color: rgb(250, 142, 230);
+    background: #7bcdf3;
+}
+
+.buttons {
     display: flex;
     justify-content: space-between;
 }

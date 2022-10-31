@@ -15,11 +15,11 @@ Was wollen wir sehen:
 - Production-ready code - so wie du auch eine Aufgabe hier in der Firma lösen würdest
 - Abgabe bitte als github mit Anweisungen wie wir es testen können bis zum 2. November 2022
 
-![screenshot](./images/readmedemo.png)
+![screenshot](./images/register.png)
 
 ## Gebaut mit
 
-- HTML/CSS, PHP/MYSQL, phpMyAdmin
+- HTML/CSS/Bootstrap, PHP/MYSQL, phpMyAdmin
 
 ## Live Demo
 [Live Demo Link](https://ninjaphil24.github.io/portfolio_1/)
