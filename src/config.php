@@ -67,7 +67,8 @@ if (isset($_POST['submit'])) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
                 echo "</div>";
-                $msg = "<div class = 'alert alert-info'>Wir haben einen Bestätigungslink an Ihre E-Mail-Adresse gesendet. Bitte überprüfen Sie auch Ihren Spam-Ordner.</div>";
+                $msg = "<div class = 'alert alert-info'>Wir haben einen Bestätigungslink 
+                an Ihre E-Mail-Adresse gesendet. Bitte überprüfen Sie auch Ihren Spam-Ordner.</div>";
             } else {
                 $msg = "<div class = 'alert alert-danger>Etwas ist schief gelaufen!</div>";
             }
@@ -83,7 +84,8 @@ if (isset($_GET['verification'])) {
         $query = mysqli_query($conn, "UPDATE users SET code = '' WHERE code='{$_GET['verification']}'");
 
         if ($query) {
-            $msg = "<div class='alert alert-success'>Die Kontoverifizierung wurde erfolgreich abgeschlossen! Sie können sich jetzt unten einloggen:</div>";
+            $msg = "<div class='alert alert-success'>Die Kontoverifizierung wurde 
+            erfolgreich abgeschlossen! Sie können sich jetzt unten einloggen:</div>";
         }
     } else {
         header("Location: index.php");
