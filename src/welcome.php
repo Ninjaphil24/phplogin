@@ -12,7 +12,9 @@ if (mysqli_num_rows($query) > 0) {
     ?>
         <div class="box">
         
-        <div style="width:320px"><iframe allow="fullscreen" frameBorder="0" height="216" src="https://giphy.com/embed/cHMwfvqXeBszH2TohN/video" width="320"></iframe></div> <br><h2><?php echo $row['username'] ?></h2> <br> <a href='logout.php'>Log Out</a>
+        <div style="width:320px">
+        <iframe allow="fullscreen" frameBorder="0" height="216" src="https://giphy.com/embed/cHMwfvqXeBszH2TohN/video" width="320"></iframe>
+        </div> <br><h2><?php echo $row['username'] ?></h2> <br> <a href='logout.php'>Log Out</a>
         </div>
         
         <?php ;
