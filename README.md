@@ -60,7 +60,7 @@ https://github.com/PHPMailer/PHPMailer
 Linters und php Code Sniffer im Repository eingerichtet und besteht alle Tests. Zur Formatierung wurde PHP Intelephense verwendet.
 
 ### Lokale Installation
-Wenn Sie die App auf Ihrem lokalen Computer testen möchten, müssen Sie das Repository klonen und eine Datenbank namens „login“ erstellen, in die Sie die Datei „users.sql“ importieren müssen. Ich habe XAMPP als lokalen Host verwendet.  Um meine E-Mail-Adresse für automatische E-Mails zu verwenden, habe ich die Zeilen, die Sie ändern müssen, in den Code in der E-Mail eingefügt, die ich Ihnen mit dem Link zum Github-Repo gesendet habe.  Sie müßen PHPMailer installieren so wie es beschreibt ist oben.  
+Wenn Sie die App auf Ihrem lokalen Computer testen möchten, müssen Sie das Repository klonen und eine Datenbank namens „login“ erstellen, in die Sie die Datei „users.sql“ importieren müssen. Ich habe XAMPP als lokalen Host verwendet.  Um meine E-Mail-Adresse für automatische E-Mails zu verwenden, habe ich die Zeilen, die Sie ändern müssen, in den Code in der E-Mail eingefügt, die ich Ihnen mit dem Link zum Github-Repo gesendet habe.  Sie müßen PHPMailer in dem Ordner, der geklont wurde installieren so wie es beschreibt ist oben.  
 
 ### Merkmale
 Die Indexseite beginnt mit dem Login, der wie üblich über einen Button zur Registrierung führt.<br>
