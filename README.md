@@ -127,7 +127,7 @@ modules:
 step_decorators: ~
 
 ```
-Wenn Sie die App lokal testen möchten, müssen Sie die lokale URL auskommentieren und gegebenenfalls anpassen, wie Sie Ihren Ordner erstellt haben, und die Live-URL auskommentieren.
+Wenn Sie die App lokal testen möchten, müssen Sie die lokale URL auskommentieren und gegebenenfalls anpassen, wie Sie Ihren Ordner erstellt haben, und die Live-URL kommentieren.
 Innerhalb des Ordners „tests“ befindet sich ein Ordner namens „Acceptance“. In diesem Ordner befindet sich eine Datei namens <b>LocalCest.php</b>. Löschen Sie diese Datei und ersetzen Sie sie durch die Datei <b>LocalCest.php</b>, die im Root Directory des Github-Repositorys enthalten ist.  Nachdem Sie dies getan haben, können Sie die Tests in Ihrer Command Line ausführen, indem Sie den folgenden Befehl verwenden:
 ```
 php vendor/bin/codecept run --steps
