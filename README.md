@@ -93,7 +93,7 @@ Wenn Sie auf den Link klicken, werden Sie zur Anmeldeseite weitergeleitet, mit d
 Um den Fehler für die Bereitstellung zu beheben, habe ich eine zusätzliche Datei namens „login.php“ erstellt, in der die Bootstrap-Nachricht fest in HTML codiert ist, wodurch die App so funktioniert, wie sie es lokal tut. Diese Datei wird für die lokale Verwendung nicht benötigt und ist nicht in dem Repository enthalten, das ich Ihnen gesendet habe.<br>
 <img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/verification.png" width="400" />
 <br>
-Wenn Sie versuchen, sich mit einer falschen E-Mail-Adresse oder einem falschen Passwort anzumelden, stoppt Sie das System.
+Wenn Sie versuchen, sich mit einer falschen E-Mail-Adresse oder einem falschen Passwort anzumelden, stoppt Sie das System.<br>
 <img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/wrongemail.png" width="400" />
 <br>
 Wenn Sie verifiziert sind, können Sie sich anmelden und gelangen auf die „Hallo“-Seite, wo Sie sich auch abmelden können.<br>

@@ -12,27 +12,27 @@ include 'config.php';
         <form action="" method="post">
             <div class="inputBox">
                 <input type="text" name="username" required>
-                <label>Username</label>
+                <label for="username">Username</label>
             </div>
 
             <div class="inputBox">
                 <input type="email" name="email" required>
-                <label>Email</label>
+                <label for="email">Email</label>
             </div>
 
             <div class="inputBox">
                 <input type="password" name="password" required>
-                <label>Passwort</label>
+                <label for="password">Passwort</label>
             </div>
 
             <div class="inputBox">
                 <input type="password" name="confirm-password" required>
-                <label>Passwort bestätigen</label>
+                <label for="confirm-password">Passwort bestätigen</label>
             </div>
             <h4>Haben Sie schon Konto?</h4>
             <div class="buttons">
-                <button type="submit" name="submit" value="Submit">Registrieren</button>
-                <a href="index.php">Login</a>
+                <button type="submit" name="submit" value="Submit"><label for="register">Registrieren</label></button><label for="login">
+                <a href="index.php">Login</a></label>
             </div>
 
         </form>
