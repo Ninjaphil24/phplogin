@@ -21,7 +21,7 @@ include "config.php";
                 <label for="password">Passwort</label>
             </div>
 
-            <h4>Kein Konto?</h4>
+            <h4>Kein Konto?</h4> <br>
             <div class="buttons">
 
                 <button type="submit" name="login" value="Login"><label for="login">Login</label></button>

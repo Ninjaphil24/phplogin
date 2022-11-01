@@ -29,10 +29,10 @@ include 'config.php';
                 <input type="password" name="confirm-password" required>
                 <label for="confirm-password">Passwort bestätigen</label>
             </div>
-            <h4>Haben Sie schon Konto?</h4>
+            <h4>Haben Sie schon Konto?</h4> <br>
             <div class="buttons">
-                <button type="submit" name="submit" value="Submit"><label for="register">Registrieren</label></button><label for="login">
-                <a href="index.php">Login</a></label>
+                <button type="submit" name="submit" value="Submit">Registrieren</button> 
+                <a href="index.php">Login</a>
             </div>
 
         </form>

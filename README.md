@@ -17,8 +17,9 @@ Was wollen wir sehen:
 
 ## Gebaut mit
 
-- HTML/CSS/Bootstrap, PHP/MYSQL, XAMPP
+- HTML/CSS/Bootstrap, PHP/MYSQL, XAMPP, PHP 8.1.6, Composer version 2.3.5 
 Ich habe auf die Verwendung von Javascript verzichtet, um die Leistungsfähigkeit allein durch PHP zu demonstrieren.
+
 
 ## Live Demo
 [Live Demo Link](https://modinosloginregister.herokuapp.com/)
@@ -90,7 +91,7 @@ Wenn Sie versuchen, sich anzumelden, ohne zuerst auf den Link zu klicken, stoppt
 Wenn Sie auf den Link klicken, werden Sie zur Anmeldeseite weitergeleitet, mit der Bestätigung, dass Ihr Konto verifiziert ist.
 
 <b>Es gibt einen Fehler in der Heroku-Bereitstellung, den ich trotz zahlreicher Versuche nicht beheben konnte. Die Meldung <i>„Die Kontoverifizierung wurde erfolgreich abgeschlossen! Sie können sich jetzt unten einloggen:"</i> erscheint nicht. <u> Die Verifikation funktioniert jedoch ordnungsgemäß.</u></b> <br>
-Um den Fehler für die Bereitstellung zu beheben, habe ich eine zusätzliche Datei namens „login.php“ erstellt, in der die Bootstrap-Nachricht fest in HTML codiert ist, wodurch die App so funktioniert, wie sie es lokal tut. Diese Datei wird für die lokale Verwendung nicht benötigt und ist nicht in dem Repository enthalten, das ich Ihnen gesendet habe.<br>
+Um den Fehler für die Bereitstellung zu beheben, habe ich eine zusätzliche Datei namens „verify.php“ erstellt, in der die Bootstrap-Nachricht fest in HTML codiert ist. Diese Datei wird für die lokale Verwendung nicht benötigt und ist nicht in dem Repository enthalten, das ich Ihnen gesendet habe.<br>
 <img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/verification.png" width="400" />
 <br>
 Wenn Sie versuchen, sich mit einer falschen E-Mail-Adresse oder einem falschen Passwort anzumelden, stoppt Sie das System.<br>
@@ -105,8 +106,33 @@ Bereitstellung mit Apache2 auf Heroku.
 
 
 ### Unit Tests
-Für Unit-Tests muss Codeception gemäß den Setup-Anweisungen [hier](https://codeception.com/quickstart) auf Ihrem Computer installiert werden: 
-Befolgen Sie die nummerierten Anweisungen, nicht die "Simplified Setup". Geben Sie in Schritt 4 die folgende URL in Ihre Datei tests/Acceptance.suite.yml ein.
+Für Unit-Tests muss Codeception gemäß den Setup-Anweisungen [hier](https://codeception.com/quickstart) auf Ihrem Computer installiert werden.  Composer und PHP müßen auch installiert sein.  
+
+Erstellen Sie irgendwo auf Ihrem Computer einen Ordner. Ich habe einen Ordner in htdocs auf XAMPP erstellt. Starten Sie eine Command Prompt innerhalb des Ordners und geben Sie die folgenden Befehle einzeln nacheinander ein:
+```
+composer require "codeception/codeception" --dev
+php vendor/bin/codecept bootstrap
+php vendor/bin/codecept generate:cest Acceptance Local
+
+```
+Ein Ordner mit dem Namen "tests" wird erstellt. In diesem Ordner befindet sich eine Datei namens Acceptance.suite.yml. Ersetzen Sie den Code in dieser Datei durch den folgenden Code:
+```
+actor: AcceptanceTester
+modules:
+    enabled:
+        - PhpBrowser:
+            # url: http://localhost/phplogin/docs/
+            url: https://modinosloginregister.herokuapp.com/
+
+step_decorators: ~
+
+```
+Wenn Sie die App lokal testen möchten, müssen Sie die lokale URL auskommentieren und gegebenenfalls anpassen, wie Sie Ihren Ordner erstellt haben, und die Live-URL auskommentieren.
+Innerhalb des Ordners „tests“ befindet sich ein Ordner namens „Acceptance“. In diesem Ordner befindet sich eine Datei namens <b>LocalCest.php</b>. Löschen Sie diese Datei und ersetzen Sie sie durch die Datei <b>LocalCest.php</b>, die im Root Directory des Github-Repositorys enthalten ist.  Nachdem Sie dies getan haben, können Sie die Tests in Ihrer Command Line ausführen, indem Sie den folgenden Befehl verwenden:
+```
+php vendor/bin/codecept run --steps
+```
+
 
 
 👤 **Autor**
