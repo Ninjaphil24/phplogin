@@ -108,7 +108,7 @@ Bereitstellung mit Apache2 auf Heroku.
 ### Unit Tests
 Für Unit-Tests muss Codeception gemäß den nachstehenden Setup-Anweisungen auf Ihrem Computer installiert werden.  Composer und PHP müßen auch installiert sein.  Über Codeception können Sie [hier](https://codeception.com/quickstart) lesen.  
 
-Erstellen Sie irgendwo auf Ihrem Computer einen Ordner. Ich habe einen Ordner in htdocs auf XAMPP erstellt. Starten Sie eine Command Prompt innerhalb des Ordners und geben Sie die folgenden Befehle einzeln nacheinander ein:
+Erstellen Sie irgendwo auf Ihrem Computer einen Ordner, der nicht der gleiche Ordner ist mit den geklonten Ordner, wenn Sie lokal testen wollen. Ich habe einen Ordner in htdocs auf XAMPP erstellt. Starten Sie eine Command Prompt innerhalb des Ordners und geben Sie die folgenden Befehle einzeln nacheinander ein:
 ```
 composer require "codeception/codeception" --dev
 php vendor/bin/codecept bootstrap
