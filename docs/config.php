@@ -3,11 +3,7 @@
 session_start();
 
 // Localhost settings
-// $conn = mysqli_connect("localhost", "root", "", "login");
-
-// Live host settings (Live host db is on heroku and on a free tier.  It can be temperamental.)
-$conn = mysqli_connect("eu-cdbr-west-03.cleardb.net", "baaaf2adc6f7c6", "15b21c52", "heroku_230984791d3e78e", 3306);
-
+$conn = mysqli_connect("localhost", "root", "", "login");
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -27,7 +23,7 @@ if (isset($_POST['submit'])) {
     $confirm_password = mysqli_real_escape_string($conn, md5($_POST['confirm-password']));
     $code = mysqli_real_escape_string($conn, md5(rand()));
     if (mysqli_num_rows(mysqli_query($conn, "SELECT*FROM   users WHERE email='{$email}'")) > 0) {
-        $msg = "<div class = 'alert alert-danger'>{$email} - This email is already in use!</div>";
+        $msg = "<div class = 'alert alert-danger'>{$email} - Diese E-Mail-Adresse wird schon verwendet!</div>";
     } else {
         if ($password === $confirm_password) {
             $sql = "INSERT INTO users (username, email,password,code) 
@@ -47,9 +43,9 @@ if (isset($_POST['submit'])) {
                     //Set the SMTP server to send through
                     $mail->SMTPAuth = true;
                     //Enable SMTP authentication
-                    $mail->Username = 'automod24@gmail.com';
+                    $mail->Username = 'anemail@gmail.com';
                     //SMTP username
-                    $mail->Password = 'alhypwggpmjaxyyb';
+                    $mail->Password = 'xxxxxxxxxxxxx';
                     //SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                     //Enable implicit TLS encryption
@@ -57,15 +53,15 @@ if (isset($_POST['submit'])) {
                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
-                    $mail->setFrom('automod24@gmail.com', 'Phil Mod');
+                    $mail->setFrom('anemail@gmail.com', 'John Smith');
                     $mail->addAddress($email);
                     //Content
                     $mail->isHTML(true);
                     //Set email format to HTML
                     $mail->Subject = 'Bitte antworten Sie nicht auf diese Email!';
                     $mail->Body = 'Bitte klicken Sie auf den folgenden Link, um Ihre Registrierung zu bestaetigen 
-                    <b><a href="http://localhost/phplogin/src/?verification=' . $code . '">
-                    http://localhost/phplogin/src/?verification=' . $code . '</a></b>';
+                    <b><a href="http://localhost/phplogin/docs/?verification=' . $code . '">
+                    http://localhost/phplogin/docs/?verification=' . $code . '</a></b>';
                     $mail->send();
                     echo 'Message has been sent';
                 } catch (Exception $e) {

@@ -15,18 +15,14 @@ Was wollen wir sehen:
 - Production-ready code - so wie du auch eine Aufgabe hier in der Firma lösen würdest
 - Abgabe bitte als github mit Anweisungen wie wir es testen können bis zum 2. November 2022
 
-![screenshot](./images/register.png)
-
 ## Gebaut mit
 
-- HTML/CSS/Bootstrap, PHP/MYSQL, phpMyAdmin
+- HTML/CSS/Bootstrap, PHP/MYSQL, XAMPP
+Ich habe auf die Verwendung von Javascript verzichtet, um die Leistungsfähigkeit allein durch PHP zu demonstrieren.
 
 ## Live Demo
-[Live Demo Link](https://ninjaphil24.github.io/portfolio_1/)
-### Prerequisites
-Jeder Standardbrowser.  
-### Install
-Installieren Sie für die Aktivierung und Komponententests auf Ihrem lokalen Computer XAMPP, klonen Sie das Repository in htdocs und erstellen Sie eine Datenbank, indem Sie die Datei db.sql importieren.
+[Live Demo Link](https://modinosloginregister.herokuapp.com/)
+
 ### Code Sniffer und Linters-Installation
 
 Code Sniffer und Linters wurden lokal mit den folgenden Befehlen in der Powershell installiert: 
@@ -43,12 +39,13 @@ In composer.json brauchen Sie die folgenden scripts:
         "phpcbf": "phpcbf --standard=PSR12 src/"<br>
     }
 ```
-Um phplint auszuführen, verwende ich den folgenden Befehl in der Befehlszeile innerhalb des commandline: <br>
+Um phplint auszuführen, verwende ich den folgenden Befehl im commandline: <br>
 ```
 ./vendor/bin/phplint --no-cache src/ 
 ```
 <br><br>
 Sobald phplint lokal konfiguriert wurde, wurde es zu github gepusht und dann wurde ein Workflow mit dem PHP-Plugin von Github Actions eingerichtet auf dem Repository.  Im Github workflows folder im Repository können Sie die Konfiguration vom phplint.yml file sehen.  
+
 ### PHPMailer
 PHPMailer wurde mit dem folgenden Befehl in der Commandline mit Composer heruntergeladen: <br><br>
 ```
@@ -58,14 +55,57 @@ composer require phpmailer/phpmailer
 Mehr über PHPMailer können Sie im folgenden Github Repo lesen:<br><br>
 https://github.com/PHPMailer/PHPMailer
 
-### Verwendungszweck
-Einfache Eingabe von Benutzername und Passwort. Der Link in der E-Mail wird gesendet, um das Konto zu aktivieren.
-### Tests durchführen
-Linters im Repository eingerichtet und besteht alle Tests. Für Unit-Tests muss Codeception gemäß den Setup-Anweisungen [hier](https://codeception.com/quickstart) auf Ihrem Computer installiert werden: 
-Befolgen Sie die nummerierten Anweisungen, nicht die "Simplified Setup". Geben Sie in Schritt 4 die folgende URL in Ihre Datei tests/Acceptance.suite.yml ein.
+### Tests durchführen und Formatierung
+Linters und php Code Sniffer im Repository eingerichtet und besteht alle Tests. Zur Formatierung wurde PHP Intelephense verwendet.
+
+### Lokale Installation
+Wenn Sie die App auf Ihrem lokalen Computer testen möchten, müssen Sie das Repository klonen und eine Datenbank namens „login“ erstellen, in die Sie die Datei „users.sql“ importieren müssen. Ich habe XAMPP als lokalen Host verwendet.  Um meine E-Mail-Adresse für automatische E-Mails zu verwenden, habe ich die Zeilen, die Sie ändern müssen, in den Code in der E-Mail eingefügt, die ich Ihnen mit dem Link zum Github-Repo gesendet habe.  Sie müßen PHPMailer installieren so wie es beschreibt ist oben.  
+
+### Merkmale
+Die Indexseite beginnt mit dem Login, der wie üblich über einen Button zur Registrierung führt.<br>
+![screenshot](./images/login.png)
+<br>
+Wenn Sie auf "Registrierung" klicken, werden Sie auf die Registrierungsseite geleitet.<br>
+
+![screenshot](./images/register.png)<br>
+Wenn Sie eine bereits vorhandene E-Mail-Adresse eingeben, hält Sie das System an.<br>
+
+![screenshot](./images/emailused.png)<br>
+Wenn Sie bei der Registrierung nicht zweimal dasselbe Passwort eingeben, stoppt Sie das System.<br>
+
+![screenshot](./images/passwordmismatch.png)<br>
+
+Bei erfolgreicher Registrierung werden Sie darüber informiert, dass eine E-Mail mit einem Link versendet wurde.
+
+![screenshot](./images/verifsent.png)<br>
+
+Ein Link wird mit einem Bestätigungscode gesendet.
+
+![screenshot](./images/emaillink.png)<br>
+
+Wenn Sie versuchen, sich anzumelden, ohne zuerst auf den Link zu klicken, stoppt das System Sie.
+
+![screenshot](./images/unverified.png)<br>
+
+Wenn Sie auf den Link klicken, werden Sie zur Anmeldeseite weitergeleitet, mit der Bestätigung, dass Ihr Konto verifiziert ist.
+
+<b>Es gibt einen Fehler in der Heroku-Bereitstellung, den ich trotz zahlreicher Versuche nicht beheben konnte. Die Meldung <i>„Die Kontoverifizierung wurde erfolgreich abgeschlossen! Sie können sich jetzt unten einloggen:"</i> erscheint nicht. <u> Die Verifikation funktioniert jedoch ordnungsgemäß.</u></b> <br>
+Um den Fehler für die Bereitstellung zu beheben, habe ich eine zusätzliche Datei namens „login.php“ erstellt, in der die Bootstrap-Nachricht fest in HTML codiert ist, wodurch die App so funktioniert, wie sie es lokal tut. Diese Datei wird für die lokale Verwendung nicht benötigt und ist nicht in dem Repository enthalten, das ich Ihnen gesendet habe.
+
+![screenshot](./images/verification.png)<br>
+Wenn Sie versuchen, sich mit einer falschen E-Mail-Adresse oder einem falschen Passwort anzumelden, stoppt Sie das System.
+![screenshot](./images/wrongemail.png)<br>
+Wenn Sie verifiziert sind, können Sie sich anmelden und gelangen auf die „Hallo“-Seite, wo Sie sich auch abmelden können.<br>
+![screenshot](./images/hello.png)<br>
+
 ### Deployment
-Bereitstellung mit Apache auf freeWHA.
-[Link to freeWHA](https://www.freewebhostingarea.com/)
+Bereitstellung mit Apache2 auf Heroku.
+
+
+### Unit Tests
+Für Unit-Tests muss Codeception gemäß den Setup-Anweisungen [hier](https://codeception.com/quickstart) auf Ihrem Computer installiert werden: 
+Befolgen Sie die nummerierten Anweisungen, nicht die "Simplified Setup". Geben Sie in Schritt 4 die folgende URL in Ihre Datei tests/Acceptance.suite.yml ein.
+
 
 👤 **Autor**
 

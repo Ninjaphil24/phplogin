@@ -13,18 +13,18 @@ include "config.php";
 
             <div class="inputBox">
                 <input type="email" name="email" required>
-                <label>Email</label>
+                <label for="email">Email</label>
             </div>
 
             <div class="inputBox">
                 <input type="password" name="password" required>
-                <label>Passwort</label>
+                <label for="password">Passwort</label>
             </div>
 
             <h4>Kein Konto?</h4>
             <div class="buttons">
 
-                <button type="submit" name="login" value="Login">Login</button>
+                <button type="submit" name="login" value="Login"><label for="login">Login</label></button>
                 <a href="register.php">Registrierung</a>
 
             </div>
