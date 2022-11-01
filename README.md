@@ -63,40 +63,42 @@ Wenn Sie die App auf Ihrem lokalen Computer testen möchten, müssen Sie das Rep
 
 ### Merkmale
 Die Indexseite beginnt mit dem Login, der wie üblich über einen Button zur Registrierung führt.<br>
-![screenshot](./images/login.png)
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/login.png" width="400" />
 <br>
 Wenn Sie auf "Registrierung" klicken, werden Sie auf die Registrierungsseite geleitet.<br>
-
-![screenshot](./images/register.png)<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/register.png" width="400" />
+<br>
 Wenn Sie eine bereits vorhandene E-Mail-Adresse eingeben, hält Sie das System an.<br>
-
-![screenshot](./images/emailused.png)<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/emailused.png" width="400" />
+<br>
 Wenn Sie bei der Registrierung nicht zweimal dasselbe Passwort eingeben, stoppt Sie das System.<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/passwordmismatch.png" width="400" />
+<br>
 
-![screenshot](./images/passwordmismatch.png)<br>
+Bei erfolgreicher Registrierung werden Sie darüber informiert, dass eine E-Mail mit einem Link versendet wurde.<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/verifsent.png" width="400" />
+<br>
 
-Bei erfolgreicher Registrierung werden Sie darüber informiert, dass eine E-Mail mit einem Link versendet wurde.
+Ein Link wird mit einem Bestätigungscode gesendet.<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/emaillink.png" width="800" />
+<br>
 
-![screenshot](./images/verifsent.png)<br>
-
-Ein Link wird mit einem Bestätigungscode gesendet.
-
-![screenshot](./images/emaillink.png)<br>
-
-Wenn Sie versuchen, sich anzumelden, ohne zuerst auf den Link zu klicken, stoppt das System Sie.
-
-![screenshot](./images/unverified.png)<br>
+Wenn Sie versuchen, sich anzumelden, ohne zuerst auf den Link zu klicken, stoppt das System Sie.<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/unverified.png" width="400" />
+<br>
 
 Wenn Sie auf den Link klicken, werden Sie zur Anmeldeseite weitergeleitet, mit der Bestätigung, dass Ihr Konto verifiziert ist.
 
 <b>Es gibt einen Fehler in der Heroku-Bereitstellung, den ich trotz zahlreicher Versuche nicht beheben konnte. Die Meldung <i>„Die Kontoverifizierung wurde erfolgreich abgeschlossen! Sie können sich jetzt unten einloggen:"</i> erscheint nicht. <u> Die Verifikation funktioniert jedoch ordnungsgemäß.</u></b> <br>
-Um den Fehler für die Bereitstellung zu beheben, habe ich eine zusätzliche Datei namens „login.php“ erstellt, in der die Bootstrap-Nachricht fest in HTML codiert ist, wodurch die App so funktioniert, wie sie es lokal tut. Diese Datei wird für die lokale Verwendung nicht benötigt und ist nicht in dem Repository enthalten, das ich Ihnen gesendet habe.
-
-![screenshot](./images/verification.png)<br>
+Um den Fehler für die Bereitstellung zu beheben, habe ich eine zusätzliche Datei namens „login.php“ erstellt, in der die Bootstrap-Nachricht fest in HTML codiert ist, wodurch die App so funktioniert, wie sie es lokal tut. Diese Datei wird für die lokale Verwendung nicht benötigt und ist nicht in dem Repository enthalten, das ich Ihnen gesendet habe.<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/verification.png" width="400" />
+<br>
 Wenn Sie versuchen, sich mit einer falschen E-Mail-Adresse oder einem falschen Passwort anzumelden, stoppt Sie das System.
-![screenshot](./images/wrongemail.png)<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/wrongemail.png" width="400" />
+<br>
 Wenn Sie verifiziert sind, können Sie sich anmelden und gelangen auf die „Hallo“-Seite, wo Sie sich auch abmelden können.<br>
-![screenshot](./images/hello.png)<br>
+<img src="https://github.com/Ninjaphil24/phplogin/blob/main/images/hello.png" width="400" />
+<br>
 
 ### Deployment
 Bereitstellung mit Apache2 auf Heroku.
