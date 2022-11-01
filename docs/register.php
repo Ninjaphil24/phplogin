@@ -29,7 +29,7 @@ include 'config.php';
                 <input type="password" name="confirm-password" required>
                 <label for="confirm-password">Passwort bestätigen</label>
             </div>
-            <h4>Haben Sie schon Konto?</h4> <br>
+            <h4>Haben Sie bereits ein Konto?</h4> <br>
             <div class="buttons">
                 <button type="submit" name="submit" value="Submit">Registrieren</button> 
                 <a href="index.php">Login</a>
