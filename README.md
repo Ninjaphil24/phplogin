@@ -34,15 +34,15 @@ composer require overtrue/phplint --dev
 ```
 In composer.json brauchen Sie die folgenden scripts:
 ```
-"scripts": {<br>
-        "lint":"phplint --no-cache src/",<br>
-        "phpcs": "phpcs --standard=PSR12 src/",<br>
-        "phpcbf": "phpcbf --standard=PSR12 src/"<br>
+"scripts": {
+        "lint":"phplint --no-cache docs/",
+        "phpcs": "phpcs --standard=PSR12 docs/",
+        "phpcbf": "phpcbf --standard=PSR12 docs/"
     }
 ```
 Um phplint auszuführen, verwende ich den folgenden Befehl im commandline: <br>
 ```
-./vendor/bin/phplint --no-cache src/ 
+./vendor/bin/phplint --no-cache docs/ 
 ```
 <br><br>
 Sobald phplint lokal konfiguriert wurde, wurde es zu github gepusht und dann wurde ein Workflow mit dem PHP-Plugin von Github Actions eingerichtet auf dem Repository.  Im Github workflows folder im Repository können Sie die Konfiguration vom phplint.yml file sehen.  
